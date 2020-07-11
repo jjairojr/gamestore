@@ -5,8 +5,11 @@ export const Container = styled.div`
   flex-wrap: wrap;
   position: relative;
 
-  width: 500px;
+  max-width: 500px;
+  min-width: 300px;
+
   height: 300px;
+  min-height: 100px;
 
   transition: 0.2s;
 
@@ -19,6 +22,8 @@ export const Container = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
+
+  object-fit: cover;
 
   box-shadow: 9px 8px 7px rgba(0, 0, 0, 0.42);
 `;
@@ -38,15 +43,21 @@ export const BuyDiv = styled.div`
   bottom: 0px;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
+
+  cursor: pointer;
 `;
 
 export const IconDiv = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 
-  background: grey;
+  display: flex;
+  place-content: center;
+  align-items: center;
 
-  border-radius: 15px;
+  background: #48a9c8;
+
+  border-radius: 20px;
 `;
 
 export const Price = styled.div`

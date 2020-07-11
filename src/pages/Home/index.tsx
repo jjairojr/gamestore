@@ -1,14 +1,28 @@
 import React from 'react';
 
 import GameCard from '../../components/GameCard';
+import Cart from '../../components/Cart';
 
-import { Container } from './styles';
+import { Container, GameDiv, GameContainer, Teste } from './styles';
 
 const Home: React.FC = () => {
   return (
-    <Container>
-      <GameCard />
-    </Container>
+    <Teste>
+      <Container>
+        <Cart />
+        <GameContainer>
+          <GameDiv>
+            <GameCard />
+          </GameDiv>
+          <GameDiv end>
+            <GameCard />
+          </GameDiv>
+          <GameDiv>
+            <GameCard />
+          </GameDiv>
+        </GameContainer>
+      </Container>
+    </Teste>
   );
 };
 

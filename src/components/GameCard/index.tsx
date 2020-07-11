@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiShoppingCart } from 'react-icons/fi';
 
 import assetImage from '../../assets/cod.jpg';
 
@@ -9,7 +10,9 @@ const GameCard: React.FC = () => {
     <Container>
       <Image src={assetImage} />
       <BuyDiv>
-        <IconDiv />
+        <IconDiv>
+          <FiShoppingCart color="#fff" size={20} />
+        </IconDiv>
         <Price>R$ 29,99</Price>
       </BuyDiv>
     </Container>
