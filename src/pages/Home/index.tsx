@@ -51,10 +51,10 @@ const Home: React.FC = () => {
       case 'MAIS_POPULARES':
         mockClone = mockClone.sort((a, b) => {
           if (a.score > b.score) {
-            return 1;
+            return -1;
           }
           if (b.score > a.score) {
-            return -1;
+            return 1;
           }
           return 0;
         });
