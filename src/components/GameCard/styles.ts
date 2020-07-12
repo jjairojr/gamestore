@@ -1,8 +1,4 @@
-import styled from 'styled-components';
-
-export const Container = styled.div`
-  display: flex;
-`;
+import styled, { keyframes } from 'styled-components';
 
 export const GameContainer = styled.div`
   display: flex;
@@ -17,19 +13,34 @@ export const GameContainer = styled.div`
   height: 300px;
   min-height: 100px;
 
-  transition: 0.2s;
+  transition: 1s;
+`;
 
-  &:hover {
+export const Container = styled.div`
+  display: flex;
+
+  &:hover ${GameContainer} {
     width: 550px;
     height: 320px;
   }
 `;
 
-export const Teste = styled.div`
+const opacity = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const GameDetails = styled.div`
   display: grid;
   width: 200px;
   height: 320px;
   background: rgba(0, 0, 0, 0.6);
+
+  animation: ${opacity} 1s;
 `;
 
 export const Image = styled.img`

@@ -44,7 +44,7 @@ const GameCardCart: React.FC<GameInterface> = ({ game }) => {
   }, [loadImage]);
 
   const removeGame = useCallback(() => {
-    addToast('Game was removed succesfully!', {
+    addToast(`O jogo ${game.name} foi removido do seu carrinho!`, {
       appearance: 'warning',
       autoDismiss: true,
     });

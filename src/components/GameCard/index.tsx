@@ -11,7 +11,7 @@ import {
   BuyDiv,
   IconDiv,
   Price,
-  Teste,
+  GameDetails,
   GameContainer,
   GameScore,
   GameName,
@@ -48,7 +48,7 @@ const GameCard: React.FC<GameInterface> = ({ game }) => {
   }, [loadImage]);
 
   const buyProduct = useCallback(() => {
-    addToast('Game was added in your cart!', {
+    addToast(`O jogo ${game.name} foi adicionado ao seu carrinho!`, {
       appearance: 'success',
       autoDismiss: true,
     });
@@ -56,11 +56,11 @@ const GameCard: React.FC<GameInterface> = ({ game }) => {
   }, [game, addProductOnCart, addToast]);
 
   return (
-    <Container>
-      <GameContainer
-        onMouseEnter={() => setMouseOnCard(true)}
-        onMouseLeave={() => setMouseOnCard(false)}
-      >
+    <Container
+      onMouseEnter={() => setMouseOnCard(true)}
+      onMouseLeave={() => setMouseOnCard(false)}
+    >
+      <GameContainer>
         {gameImage && <Image src={gameImage} />}
         <BuyDiv onClick={buyProduct}>
           <IconDiv>
@@ -77,7 +77,7 @@ const GameCard: React.FC<GameInterface> = ({ game }) => {
         </BuyDiv>
       </GameContainer>
       {mouseOnCard && (
-        <Teste>
+        <GameDetails>
           <GameName>{game.name}</GameName>
           <GameDescription>
             <div>Resumo:</div>
@@ -90,7 +90,7 @@ const GameCard: React.FC<GameInterface> = ({ game }) => {
             Score:
             {game.score}
           </GameScore>
-        </Teste>
+        </GameDetails>
       )}
     </Container>
   );
