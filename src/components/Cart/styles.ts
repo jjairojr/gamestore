@@ -18,6 +18,8 @@ export const Container = styled.div`
     color: #7e7e7e;
     font-weight: 500;
   }
+
+  overflow: auto;
 `;
 
 export const EmptyCart = styled.img`

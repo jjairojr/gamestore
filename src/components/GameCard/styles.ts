@@ -5,8 +5,6 @@ export const GameContainer = styled.div`
   flex-wrap: wrap;
   position: relative;
 
-  width: 500px;
-
   max-width: 550px;
   min-width: 300px;
 

@@ -31,6 +31,10 @@ interface GameDataInterface {
 
 const Home: React.FC = () => {
   const [mockData, setMockData] = useState<GameDataInterface[]>([]);
+  const [select, setSelect] = useState<any>({
+    value: 'MAIS_POPULARES',
+    label: 'Mais Populares',
+  });
 
   const { orderDone, goBack } = useCart();
   const options = [
@@ -39,10 +43,12 @@ const Home: React.FC = () => {
     { value: 'ORDEM_ALFABETICA', label: 'Ordem Alfabética' },
   ];
 
-  const orderGames = useCallback(({ value }) => {
+  const orderGames = useCallback(event => {
+    console.log({ event });
+    setSelect(event);
     let mockClone = [...Mock];
 
-    switch (value) {
+    switch (event.value) {
       case 'MAIS_POPULARES':
         mockClone = mockClone.sort((a, b) => {
           if (a.score > b.score) {
@@ -66,7 +72,6 @@ const Home: React.FC = () => {
           }
           return 0;
         });
-        console.log({ mockClone });
         setMockData(mockClone);
         break;
 
@@ -97,7 +102,7 @@ const Home: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    orderGames({ value: 'MAIS_POPULARES' });
+    orderGames({ value: 'MAIS_POPULARES', label: 'Mais Populares' });
   }, [orderGames]);
 
   const customStyles = {
@@ -135,7 +140,8 @@ const Home: React.FC = () => {
                 onChange={event => orderGames(event)}
                 options={options}
                 styles={customStyles}
-                placeholder="Filter..."
+                value={select}
+                placeholder="Pesquise..."
                 theme={theme => ({
                   ...theme,
                   borderRadius: 0,

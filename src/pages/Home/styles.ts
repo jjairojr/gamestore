@@ -51,6 +51,7 @@ export const LottieContainer = styled.div`
 `;
 
 export const Button = styled.div`
+  cursor: pointer;
   background: #ff9000;
   display: flex;
   justify-content: center;
