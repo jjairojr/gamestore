@@ -29,6 +29,7 @@ interface GameInterface {
 
 const GameCardCart: React.FC<GameInterface> = ({ game }) => {
   const [gameImage, setGameImage] = useState('');
+  const [mouseOnCard, setMouseOnCard] = useState<boolean>(false);
 
   const { addToast } = useToasts();
 
@@ -52,7 +53,10 @@ const GameCardCart: React.FC<GameInterface> = ({ game }) => {
   }, [removeProductOnCart, game, addToast]);
 
   return (
-    <Container>
+    <Container
+      onMouseEnter={() => setMouseOnCard(true)}
+      onMouseLeave={() => setMouseOnCard(false)}
+    >
       <div>
         <ImageContainer>
           <Image src={gameImage} />
@@ -68,11 +72,13 @@ const GameCardCart: React.FC<GameInterface> = ({ game }) => {
             {game.price.toFixed(2)}
           </div>
         </GamePrice>
-        <Footer>
-          <Icon onClick={removeGame}>
-            <FaTrash size={15} color="#FF9000" />
-          </Icon>
-        </Footer>
+        {mouseOnCard && (
+          <Footer>
+            <Icon onClick={removeGame}>
+              <FaTrash size={15} color="#FF9000" />
+            </Icon>
+          </Footer>
+        )}
       </div>
     </Container>
   );
