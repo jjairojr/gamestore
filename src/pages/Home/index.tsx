@@ -44,7 +44,6 @@ const Home: React.FC = () => {
   ];
 
   const orderGames = useCallback(event => {
-    console.log({ event });
     setSelect(event);
     let mockClone = [...Mock];
 
