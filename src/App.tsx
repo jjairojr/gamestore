@@ -1,9 +1,20 @@
-import React from "react";
+import React from 'react';
+import { ToastProvider } from 'react-toast-notifications';
+import AppProvider from './hooks';
 
-// import { Container } from './styles';
+import GlobalStyle from './styles/global';
+
+import Home from './pages/Home';
 
 const App: React.FC = () => {
-  return <>Hello World</>;
+  return (
+    <ToastProvider>
+      <AppProvider>
+        <GlobalStyle />
+        <Home />
+      </AppProvider>
+    </ToastProvider>
+  );
 };
 
 export default App;
