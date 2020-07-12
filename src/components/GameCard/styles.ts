@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+`;
+
+export const GameContainer = styled.div`
+  display: flex;
   flex-wrap: wrap;
   position: relative;
 
@@ -19,6 +23,13 @@ export const Container = styled.div`
     width: 550px;
     height: 320px;
   }
+`;
+
+export const Teste = styled.div`
+  display: grid;
+  width: 200px;
+  height: 320px;
+  background: rgba(0, 0, 0, 0.6);
 `;
 
 export const Image = styled.img`
@@ -67,4 +78,32 @@ export const Price = styled.div`
 
   color: #fb9000;
   font-weight: 500;
+`;
+
+export const GameName = styled.div`
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  padding: 20px;
+`;
+
+export const GameDescription = styled.div`
+  font-size: 10px;
+  padding: 20px;
+
+  > div {
+    font-size: 15px;
+    font-weight: 500;
+  }
+`;
+
+export const GameScore = styled.div`
+  font-size: 13px;
+  justify-self: end;
+  align-self: end;
+  color: #fb9000;
+  font-weight: 500;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 `;
