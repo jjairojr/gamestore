@@ -5,7 +5,9 @@ export const Container = styled.div`
   flex-wrap: wrap;
   position: relative;
 
-  max-width: 500px;
+  width: 500px;
+
+  max-width: 550px;
   min-width: 300px;
 
   height: 300px;
@@ -36,7 +38,7 @@ export const BuyDiv = styled.div`
 
   background: rgba(68, 67, 67, 0.8);
 
-  width: 70px;
+  width: 100px;
   height: 70px;
   position: absolute;
 
@@ -62,5 +64,7 @@ export const IconDiv = styled.div`
 
 export const Price = styled.div`
   font-size: 13px;
+
+  color: #fb9000;
   font-weight: 500;
 `;
